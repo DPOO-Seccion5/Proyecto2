@@ -23,7 +23,9 @@ public class PanelAnadirVehiculo extends JPanel{
         
     	ventanaInicio.cargar_datos();
 		setLayout(new BorderLayout());
-
+  
+		
+		
 	     // Title Label
 	     JLabel titleLabel = new JLabel("Añadir Vehiculo");
 	     titleLabel.setFont(new Font("Arial", Font.BOLD, 20));

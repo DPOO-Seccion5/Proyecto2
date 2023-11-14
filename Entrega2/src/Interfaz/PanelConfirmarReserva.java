@@ -71,6 +71,7 @@ public class PanelConfirmarReserva extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
             	JOptionPane.showMessageDialog(null, "Reserva creada exitosamente!");
+            	ventanaInicio.cargar_datos();
             	cardLayout.show(cardPanel, "panelUsuario");
             }
         });

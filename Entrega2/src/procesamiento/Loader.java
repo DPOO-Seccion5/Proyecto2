@@ -627,6 +627,73 @@ public class Loader {
 	
 			
 		}
+		
+		public static void editCarro(Vehiculo carro, boolean disp) {
+			
+			String archivo = "./Data/carrosInformacion";
+			
+			String nombre = carro.getNombre();
+			
+			
+			
+			Disponibilidad dis = carro.getDisponibilidad();
+			
+			String dispS = "";
+			
+			if(disp == false)
+			{
+				dispS = "false";
+			}
+			else
+			{
+				dispS = "true";
+			}
+			
+			String ubicacion  = dis.getUbicacion();
+			String fechaDe = dis.getFechaDevolucion();
+			String lugarDe = dis.getLugarDevolucion();
+			String fechaDis = dis.getFechaDisponibilidad();
+			
+			try
+			{
+				BufferedReader bufferedReader = new BufferedReader(new FileReader(archivo));
+				StringBuilder contenido = new StringBuilder();
+				String linea;
+				while ((linea = bufferedReader.readLine()) != null)
+				{
+					String[] parts = linea.split("=");
+					
+					if(nombre.equals(parts[0]))
+					{
+						String[] info = parts[1].split(";");
+						info[6] = "{"+dispS+","+ubicacion+","+fechaDe+","+lugarDe+","+fechaDis+"}";
+						String lineaFinal = parts[0] + "=" + String.join(";", info);;
+						
+						contenido.append(lineaFinal).append(System.lineSeparator());	
+					}
+					else
+					{
+						contenido.append(linea).append(System.lineSeparator());
+					}
+					
+				}
+				bufferedReader.close();
+				
+				BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(archivo));
+		        bufferedWriter.write(contenido.toString());
+		        bufferedWriter.close();
+				
+			}
+			catch (FileNotFoundException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+     		
+		}
 
 		
 

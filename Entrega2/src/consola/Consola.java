@@ -215,10 +215,14 @@ public class Consola {
 			if(alquilado==false)
 			{
 				dispo.setAlquilado(true);
+				Loader.editCarro(carro, true);
+				
+				
 			}
 			else
 			{
 				dispo.setAlquilado(false);
+				Loader.editCarro(carro, false);
 			}
 			
 		}

@@ -204,6 +204,7 @@ public class Compañia {
 			{
 				Disponibilidad dis = carro.getDisponibilidad();
 				dis.setAlquilado(false);
+				Loader.editCarro(carro, false);
 			}
 		}
 		

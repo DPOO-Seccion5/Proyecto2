@@ -97,6 +97,7 @@ public class PanelInformacionVehiculo extends JPanel {
             	if(fechaNueva.equals("si"))
             	{
             		ventanaInicio.cambioDisponibilidad(carro);
+            		ventanaInicio.cargar_datos();
             	}
             	
             	JOptionPane.showMessageDialog(null, "Cambio disponibilidad a: "+fechaNueva);
