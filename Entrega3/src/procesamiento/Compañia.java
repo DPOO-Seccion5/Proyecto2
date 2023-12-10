@@ -20,18 +20,56 @@ public class Compañia {
 	
 	private List<Empleado> empleados;
 	
+	private List<PasarelaPago> pasarelas;
+	
 
 	
 	
-	public Compañia(Inventario elInventario, List<Sede> lasSedes, List<Cliente> losClientes, List<Empleado> losEmpleados)
+	public Compañia(Inventario elInventario, List<Sede> lasSedes, List<Cliente> losClientes, List<Empleado> losEmpleados, List<PasarelaPago> lasPasarelas)
 	{
 		this.inventario = elInventario;
 		this.sedes = lasSedes;
 		this.clientes = losClientes;
 		this.empleados = losEmpleados;
+		this.pasarelas = lasPasarelas;
 	}
 	
 	
+	public List<Empleado> getEmpleados() {
+		return empleados;
+	}
+
+
+	public void setEmpleados(List<Empleado> empleados) {
+		this.empleados = empleados;
+	}
+
+
+	public List<PasarelaPago> getPasarelas() {
+		return pasarelas;
+	}
+
+
+	public void setPasarelas(List<PasarelaPago> pasarelas) {
+		this.pasarelas = pasarelas;
+	}
+
+
+	public void setInventario(Inventario inventario) {
+		this.inventario = inventario;
+	}
+
+
+	public void setSedes(List<Sede> sedes) {
+		this.sedes = sedes;
+	}
+
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+
 	public Inventario getInventario()
 	{
 		return inventario;

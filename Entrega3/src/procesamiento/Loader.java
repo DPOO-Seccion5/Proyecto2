@@ -1,5 +1,6 @@
 package procesamiento;
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -7,7 +8,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 
 import java.util.HashMap;
-
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -20,6 +21,7 @@ import modelo.DatosPago;
 import modelo.Disponibilidad;
 import modelo.Empleado;
 import modelo.Inventario;
+import modelo.PasarelaPago;
 import modelo.Reserva;
 import modelo.Sede;
 import modelo.Tarifa;
@@ -90,9 +92,15 @@ public class Loader {
 			
 			
 			
+			List<String> nombrePasarelas = leerArchivoPasarelas();
+			List<PasarelaPago> pasarelas = cargarPasarelas(nombrePasarelas);
+			
+			
+			
+			
 
 			
-			Compañia compañia = new Compañia(inventario1,listaSedes,listaClientes,listaEmpleados);
+			Compañia compañia = new Compañia(inventario1,listaSedes,listaClientes,listaEmpleados,pasarelas);
 			System.out.println(compañia);
 			
 			
@@ -107,7 +115,76 @@ public class Loader {
 			
 
 		}
+		
+		private List<PasarelaPago> cargarPasarelas(List<String> nombres)
+		{
+			List<PasarelaPago> pasarelas = new ArrayList<>();
+			
+			for (String nombre : nombres)
+			{
+				try 
+				{
+					Class clase = Class.forName(nombre);
+					PasarelaPago pasarela = (PasarelaPago) clase.getDeclaredConstructor(null).newInstance(null);
+					
+					pasarelas.add(pasarela);
+					
+				} 
+				catch (ClassNotFoundException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InstantiationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NoSuchMethodException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SecurityException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return pasarelas;	
+		}
+		
+		
+		
 
+		
+		private List<String> leerArchivoPasarelas()
+		{
+			List<String> nombrePasarelas = new ArrayList<>();
+			
+			try (BufferedReader br = new BufferedReader(new FileReader("./Data/pasarelasDisponibles")))
+			{
+				String nombreClase;
+				
+				while((nombreClase = br.readLine()) != null)
+				{
+					nombrePasarelas.add(nombreClase.trim());
+				}
+				
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return nombrePasarelas;
+			
+		}
 		
 
 		
