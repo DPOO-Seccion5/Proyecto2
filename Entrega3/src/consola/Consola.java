@@ -12,6 +12,14 @@ import modelo.*;
 import procesamiento.Compañia;
 import procesamiento.Loader;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Consola {
 	
 	
@@ -227,9 +235,9 @@ public class Consola {
 			
 		}
 		
-		public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd)
+		public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd, double prima)
 		{
-			compañia.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, ubicacion, laCategoria, precio, tamaño, tempAlta, tempBaja, otraSede, conAd);
+			compañia.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, ubicacion, laCategoria, precio, tamaño, tempAlta, tempBaja, otraSede, conAd,prima);
 			
 		}
 		
@@ -242,9 +250,11 @@ public class Consola {
 		}
 		
 		
-		public double crearReserva(Cliente cliente, String categoria, String sedeRecogida, String sedeDevuelta,Cobros cobro,String fecha, String rangoHor, String temporada, ArrayList<ConductorExtra> conductoresExtra)
+		public double crearReserva(Cliente cliente, String categoria, String sedeRecogida, String sedeDevuelta,Cobros cobro,String fecha, String rangoHor, String temporada, ArrayList<ConductorExtra> conductoresExtra) 
 		{
 			double precio = compañia.crearReserva(cliente, categoria, sedeRecogida, sedeDevuelta, cobro, fecha, rangoHor, temporada, conductoresExtra);
+			String factura = compañia.getFactura(cliente, precio);
+			generarFactura(factura);
 			return precio;
 		}
 		
@@ -259,6 +269,9 @@ public class Consola {
 			ArrayList lista = compañia.listaVehiculosPorSede(sede);
 			System.out.println(lista);
 			return lista;
+			
+		}
+		public void generarFactura(String factura) {
 			
 		}
 		

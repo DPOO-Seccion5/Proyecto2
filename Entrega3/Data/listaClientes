@@ -23,4 +23,4 @@ paolaramirez=paola ramirez;06/10/1983;9012345678;paraguay;321098;{23451234512345
 miguelortiz=miguel ortiz;01/25/1981;0123456789;mexico;210987;{3456234562345623,03/20,miguel ortiz,345};{0123456789,mexico,04/05};{,,,,,,,,,[]}
 claudiatorres=claudia torres;08/07/1989;1234567890;argentina;109876;{4567345673456734,09/15,claudia torres,456};{1234567890,argentina,10/28};{,,,,,,,,,[]}
 robertosanchez=roberto sanchez;02/03/1982;2345678901;chile;876543;{5678567856785678,07/10,roberto sanchez,567};{2345678901,chile,08/25};{,,,,,,,,,[]}
-a=a;a;a;a;a;{a,a,a,a};{a,a,a};{suv,SedeNorte,SedeSur,{a,a,a,a},,,[]}
+a=a;a;a;a;a;{a,a,a,a};{a,a,a};{bicicletas_electricas,SedeNorte,SedeNorte,{a,a,a,a},,,[]}

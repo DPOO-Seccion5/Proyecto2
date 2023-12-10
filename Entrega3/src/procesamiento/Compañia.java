@@ -166,6 +166,8 @@ public class Compañia {
 		double temp = 0.0;
 		double cambioSede = 0.0;
 		double conExtra = 0.0;
+		double prima = 0.0;
+		
 		for (Vehiculo carro : inventario.getVehiculos())
 		{
 			Categoria catCarro = carro.getCategoria();
@@ -192,6 +194,7 @@ public class Compañia {
 				{
 					cambioSede = tarifa.getTarifaOtraSede();
 				}
+				prima = tarifa.getTarifaPorcentajePrima();
 				if(conductoresExtra.size() > 0)
 				{
 					double precioCon = tarifa.getTarifaConductor();
@@ -206,6 +209,10 @@ public class Compañia {
 		
 		precio = precio + cambioSede;
 		
+		double prima_real= precio * prima;
+		
+		precio = precio + prima_real;
+		
 		Reserva reserva = new Reserva(categoria, sedeRecogida, sedeDevuelta, cobro, fecha, rangoHor, conductoresExtra);
 		
 		cliente.setReserva(reserva);
@@ -217,7 +224,15 @@ public class Compañia {
 		return precio;
 		
 	}
-	
+	public String getFactura(Cliente cliente, double precio) {
+		Reserva reserva = cliente.getReserva();
+		
+		String sede_dev= reserva.getSedeDevuelta();
+		String sede_rec= reserva.getSedeRecogida();
+		String categoria= reserva.getCategoria();
+		String factura = "sede recogida: " + sede_rec + " sede devuelta: " + sede_dev + "categoria: " + categoria;
+		return factura;
+	}
 	
 	public void crearTransaccion(DatosPago infoTarjeta, String mensaje, boolean resultado, double monto, String nomCuenta, String numTransaccion)
 	{
@@ -351,9 +366,9 @@ public class Compañia {
 		
 	}
 	
-	public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd)
+	public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd,double prima)
 	{
-		Tarifa tarifa = new Tarifa(tempAlta, tempBaja, otraSede, conAd);
+		Tarifa tarifa = new Tarifa(tempAlta, tempBaja, otraSede, conAd,prima);
 		
 		Categoria categoria = new Categoria(laCategoria, precio, tamaño, tarifa);
 		
