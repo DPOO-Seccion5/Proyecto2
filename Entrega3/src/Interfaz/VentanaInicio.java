@@ -1,7 +1,7 @@
 package Interfaz;
 import javax.swing.*;
 
-import com.itextpdf.text.DocumentException;
+
 
 import consola.Consola;
 import procesamiento.Compañia;
