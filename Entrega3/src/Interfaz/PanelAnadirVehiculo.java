@@ -36,10 +36,10 @@ public class PanelAnadirVehiculo extends JPanel{
 	     JPanel inputPanel = new JPanel(new GridLayout(11, 1));
 
 	     // Create an array of text fields and labels
-	     textFields = new JTextField[13];
+	     textFields = new JTextField[14];
 	     String[] data = { "Nombre", "Marca", "Color", "Placa", "Modelo", 
 	         "Tipo de Transmision", "Categoria", "Precio", "Tamaño", 
-	         "Tarifa Temporada Alta","Tarifa Temporada Baja","Tarifa cambio de sede","Tarifa por conductor adicional"};
+	         "Tarifa Temporada Alta","Tarifa Temporada Baja","Tarifa cambio de sede","Tarifa por conductor adicional","Porcentaje cobro prima"};
 	     
 	     for (int i = 0; i < data.length; i++) {
 	         JLabel label = new JLabel(data[i] + ": ");
@@ -71,7 +71,8 @@ public class PanelAnadirVehiculo extends JPanel{
 	             double tarBaja = Double.parseDouble((String)textFields[10].getText());
 	             double tarSede = Double.parseDouble((String)textFields[11].getText());
 	             double tarConAd = Double.parseDouble((String)textFields[12].getText());
-	             ventanaInicio.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, tipoTrans, categoria, precio, tamaño, tarAlta, tarBaja, tarSede, tarConAd);
+	             double PorPrima = Double.parseDouble((String)textFields[13].getText());
+	             ventanaInicio.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, tipoTrans, categoria, precio, tamaño, tarAlta, tarBaja, tarSede, tarConAd,PorPrima);
 	             
 	             infoLabel.setText(info.toString());
 	             cardLayout.show(cardPanel, "panelEmpleado");

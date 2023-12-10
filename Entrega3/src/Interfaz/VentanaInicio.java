@@ -1,6 +1,8 @@
 package Interfaz;
 import javax.swing.*;
 
+import com.itextpdf.text.DocumentException;
+
 import consola.Consola;
 import procesamiento.Compañia;
 import modelo.Cliente;
@@ -12,6 +14,7 @@ import modelo.Vehiculo;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -83,9 +86,9 @@ public class VentanaInicio  extends JFrame{
   }
   
   
-  public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd)
+  public void crearVehiculo(String nombre, String marca, String placa, String modelo, String color, String tipoTrans, String ubicacion, String laCategoria, double precio, String tamaño, double tempAlta, double tempBaja, double otraSede, double conAd, double prima)
   {
-	  consola.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, ubicacion, laCategoria, precio, tamaño, tempAlta, tempBaja, otraSede, conAd);
+	  consola.crearVehiculo(nombre, marca, placa, modelo, color, tipoTrans, ubicacion, laCategoria, precio, tamaño, tempAlta, tempBaja, otraSede, conAd,prima);
   }
   
   

@@ -1,9 +1,21 @@
-nissan_march=nissan;rfs434;2021;rojo;mecanica;{pequeño,40000,pequeño,{10000,40000,10000,5000}};{true,SedeNorte, , , }
-suzuki_swift=suzuki;vle909;2022;gris;automatica;{pequeño,40000,pequeño,{10000,40000,10000,5000}};{true,SedeNorte, , , }
-fiat_mobi=fiat;tre837;2020;amarillo;mecanica;{pequeño,40000,pequeño,{10000,40000,10000,5000}};{true,SedeNorte, , , }
-toyota_raft4=toyota;uie452;2023;blanco;automatica;{suv,80000,mediano,{10000,80000,10000,5000}};{false,SedeNorte, , , }
-honda_crv=honda;trw023;2015;cafe;automatica;{suv,80000,mediano,{10000,80000,10000,5000}};{false,SedeNorte, , , }
-hyundai_tucson=hyundai;udf420;2019;azul;automatica;{suv,80000,mediano,{10000,80000,10000,5000}};{true,SedeNorte, , , }
-chevrolet_N400=chevrolet;oes520;2020;blanco;mecanica;{van,100000,grande,{10000,100000,10000,5000}};{true,SedeNorte, , , }
-dfsk_ko5s=dfsk;tes409;2018;negro;mecanica;{van,100000,grande,{10000,100000,10000,5000}};{true,SedeNorte, , , }
-byd_T3=byd;oef250;2013;blanco;automatica;{van,100000,grande,{10000,100000,10000,5000}};{true,SedeNorte, , , }
+nissan_march=nissan;rfs434;2021;rojo;mecanica;{pequeño,40000,pequeño,{10000,40000,10000,5000,0.1}};{true,SedeNorte, , , }
+suzuki_swift=suzuki;vle909;2022;gris;automatica;{pequeño,40000,pequeño,{10000,40000,10000,5000,0.1 }};{true,SedeNorte, , , }
+fiat_mobi=fiat;tre837;2020;amarillo;mecanica;{pequeño,40000,pequeño,{10000,40000,10000,5000,0.1 }};{true,SedeNorte, , , }
+toyota_raft4=toyota;uie452;2023;blanco;automatica;{suv,80000,mediano,{10000,80000,10000,5000,0.1 }};{true,SedeNorte, , , }
+hyundai_tucson=hyundai;udf420;2019;azul;automatica;{suv,80000,mediano,{10000,80000,10000,5000,0.1 }};{true,SedeNorte, , , }
+chevrolet_N400=chevrolet;oes520;2020;blanco;mecanica;{van,100000,grande,{10000,100000,10000,5000,0.1 }};{true,SedeNorte, , , }
+dfsk_ko5s=dfsk;tes409;2018;negro;mecanica;{van,100000,grande,{10000,100000,10000,5000,0.1 }};{true,SedeNorte, , , }
+byd_T3=byd;oef250;2013;blanco;automatica;{van,100000,grande,{10000,100000,10000,5000, 0.1}};{true,SedeNorte, , , }
+moma_bikes = moma;123;2022;negra;electrica;{bicicletas_electricas,10000,pequeño,{1000,10000,1000,500,0.3}};{true,SedeNorte, , , }
+biwbik = biwbik_bikes;345;2023;azul;electrica;{bicicletas_electricas,10000,pequeño,{1000,10000,1000,500,0.3 }};{false,SedeNorte, , , }
+volt_emove = volt;678;2023;blanca;electrica;{patineta_electrica,1000,pequeño,{100,1000,100,50,0.3 }};{true,SedeNorte, , , }
+scooter_F40 = scooter;900;2023;negra;electrica;{patineta_electrica,1000,pequeño,{100,1000,100,50,0.3 }};{true,SedeNorte, , , }
+can_am=can_am;ble910;2017;naranja;mecanica;{atv,80000,mediano,{10000,80000,10000,5000,0.2 }};{true,SedeNorte, , , }
+ktm=ktm;rnk050;2016;rojo;mecanica;{atv,80000,mediano,{10000,80000,10000,5000,0.2 }};{true,SedeNorte, , , }
+ktm_1000=ktm;rrr010;2019;gris;automatica;{moto,40000,mediano,{5000,40000,5000,2500,0.15}};{true,SedeNorte, , , }
+honda_r1=honda;hri111;2020;verde;automatica;{moto,40000,mediano,{5000,40000,5000,2500,0.15}};{true,SedeNorte, , , }
+optimus_700=optimus;1;2016;azul;n/a;{bicicleta,400,pequeño,{500,400,50,25,0.25}};{true,SedeNorte, , , }
+jeep_ride=jeep;1;2020;verde;n/a;{bicicleta,400,pequeño,{500,400,50,25,0.25}};{true,SedeNorte, , , }
+
+
+
