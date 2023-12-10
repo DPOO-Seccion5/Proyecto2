@@ -219,6 +219,14 @@ public class Compañia {
 	}
 	
 	
+	public void crearTransaccion(DatosPago infoTarjeta, String mensaje, boolean resultado, double monto, String nomCuenta, String numTransaccion)
+	{
+		ResultadoPago resultadoP = new ResultadoPago(resultado,mensaje);
+		
+		
+		
+	}
+	
 	public String nombreCarro(String categoria)
 	{
 		String nombreCarro = "No hay disponibles";
